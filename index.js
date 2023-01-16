@@ -7,6 +7,11 @@ import SequelizeStore from "connect-session-sequelize";
 import UserRoute from './routes/UserRoute.js';
 import ListContactRoute from './routes/ListContactRoute.js';
 import AuthRoute from './routes/AuthRoute.js';
+import MissionRoute from './routes/MissionRoute.js';
+import VisiRoute from './routes/VisiRoute.js';
+import QuotesRoute from './routes/QuotesRoute.js';
+
+
 dotenv.config();
 
 const app = express();
@@ -34,7 +39,7 @@ app.use(session({
 app.use(cors({
     credentials: true,
     origin: [
-        'http://localhost:3000'
+        'http://localhost:3000', 
     ]
 }))
 
@@ -42,6 +47,9 @@ app.use(express.json())
 app.use(UserRoute);
 app.use(ListContactRoute);
 app.use(AuthRoute);
+app.use(MissionRoute);
+app.use(VisiRoute);
+app.use(QuotesRoute);
 
 // store.sync();
 

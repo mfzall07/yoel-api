@@ -76,7 +76,7 @@ export const deleteListContact = async (req, res) => {
             uuid: req.params.id
         },
     });
-    if(!contact) return res.status(404).json({ msg: 'User Not Found' });
+    if(!contact) return res.status(404).json({ msg: 'Contact Not Found' });
     try {
         await ListContact.destroy({
             where: {

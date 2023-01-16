@@ -4,10 +4,10 @@ import { verifyUser } from "../middleware/AuthUser.js";
 
 const router = express.Router();
 
-router.get('/list-contact', verifyUser, getListContact);
-router.get('/list-contact/:id', verifyUser, getListContactById);
+router.get('/list-contact', getListContact);
+router.get('/list-contact/:id', getListContactById);
 router.post('/list-contact/create', createListContact);
-router.patch('/list-contact/:id', verifyUser, updateListContact);
-router.delete('/list-contact/:id', verifyUser, deleteListContact);
+router.patch('/list-contact/:id', updateListContact);
+router.delete('/list-contact/:id', deleteListContact);
 
 export default router;
